@@ -1,10 +1,13 @@
-// import styles
 import { styled } from 'styled-components';
+import { Route, Routes, useNavigate } from 'react-router-dom';
+// import styles
 import './CSS/index.css';
-import { Route, Routes } from 'react-router-dom';
+// import pages
 import Home from './Pages/Home';
 import Years from './Pages/Years';
+// import icons
 import { FaBars } from 'react-icons/fa';
+import Month from './Pages/Month';
 
 const MainWrapper = styled.main`
     position: relative;
@@ -33,13 +36,22 @@ const HeaderToggle = styled(FaBars)`
 `;
 
 function App() {
+    const navigate = useNavigate();
+
     return (
         <MainWrapper>
             <HeaderToggle />
-            <h3>🐮처럼 벌고 🐶처럼 쓴다</h3>
+            <h3
+                onClick={() => {
+                    navigate('/');
+                }}
+            >
+                🐮처럼 벌고 🐶처럼 쓴다
+            </h3>
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/years/:years" element={<Years />} />
+                <Route path="/years/:year" element={<Years />} />
+                <Route path="/:year/:month" element={<Month />} />
             </Routes>
         </MainWrapper>
     );

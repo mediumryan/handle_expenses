@@ -1,15 +1,15 @@
 import { Link } from 'react-router-dom';
 import { styled } from 'styled-components';
 
-const PageWrapper = styled.div`
+export const PageWrapper = styled.div`
     width: 100%;
-    height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 `;
 
-const PageTitle = styled.h3`
+export const PageTitle = styled.h3`
     margin: 2rem auto;
     padding: 1rem 5rem;
     border-radius: 10px;
