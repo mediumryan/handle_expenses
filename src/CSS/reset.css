@@ -130,3 +130,8 @@ table {
 * {
     box-sizing: border-box;
 }
+button {
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
