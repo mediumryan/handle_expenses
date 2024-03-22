@@ -5,15 +5,16 @@ import './CSS/index.css';
 // import pages
 import Home from './Pages/Home';
 import Years from './Pages/Years';
+import Month from './Pages/Month';
 // import icons
 import { FaBars } from 'react-icons/fa';
-import Month from './Pages/Month';
 
 const MainWrapper = styled.main`
     position: relative;
     width: 100%;
     height: 100%;
     & > h3 {
+        cursor: pointer;
         width: 50%;
         margin: 2rem auto 0.5rem auto;
         padding: 1rem 5rem;
@@ -26,6 +27,10 @@ const MainWrapper = styled.main`
         color: var(--accent-100);
         background-color: var(--accent-300);
         box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        transition: 300ms box-shadow;
+        &:hover {
+            box-shadow: rgba(0, 0, 0, 0.5) 1.95px 1.95px 2.6px;
+        }
     }
 `;
 

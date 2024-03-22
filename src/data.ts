@@ -3,36 +3,7 @@ import { recoilPersist } from 'recoil-persist';
 
 const { persistAtom } = recoilPersist();
 
-class MonthlyData {
-    id: number;
-    month: string;
-
-    constructor(id: number, month: string) {
-        this.id = id;
-        this.month = month;
-    }
-}
-
-export const yearState = atom({
-    key: 'year_state',
-    default: [
-        new MonthlyData(0, 'Jan'),
-        new MonthlyData(1, 'Feb'),
-        new MonthlyData(2, 'Mar'),
-        new MonthlyData(3, 'Apr'),
-        new MonthlyData(4, 'May'),
-        new MonthlyData(5, 'Jun'),
-        new MonthlyData(6, 'Jul'),
-        new MonthlyData(7, 'Aug'),
-        new MonthlyData(8, 'Sep'),
-        new MonthlyData(9, 'Oct'),
-        new MonthlyData(10, 'Nov'),
-        new MonthlyData(11, 'Dec'),
-    ],
-});
-
-// user expenses type
-export interface ExpenseItemType {
+class ExpenseItem {
     year: number;
     month: string;
     salary: number;
@@ -41,11 +12,21 @@ export interface ExpenseItemType {
     debt: number;
     saving: number;
     balance: number;
+
+    constructor(year: number, month: string) {
+        this.year = year;
+        this.month = month;
+        this.salary = 0;
+        this.credit = 0;
+        this.house = 0;
+        this.debt = 0;
+        this.saving = 0;
+        this.balance = 0;
+    }
 }
 
-// generate user expenses
-function generateExpensesData(): ExpenseItemType[] {
-    const data: ExpenseItemType[] = [];
+function generateExpensesData(): ExpenseItem[] {
+    const data: ExpenseItem[] = [];
     const startYear = 2024;
     const endYear = 2025;
 
@@ -68,31 +49,21 @@ function generateExpensesData(): ExpenseItemType[] {
                 'Nov',
                 'Dec',
             ];
-            data.push({
-                year,
-                month: monthNames[month],
-                salary: 0,
-                credit: 0,
-                house: 0,
-                debt: 0,
-                saving: 0,
-                balance: 0,
-            });
+            const expenseItem = new ExpenseItem(year, monthNames[month]);
+            data.push(expenseItem);
         }
     }
 
     return data;
 }
 
-// sunny expenses
-export const sunnyExpensesState = atom<ExpenseItemType[]>({
+export const sunnyExpensesState = atom<ExpenseItem[]>({
     key: 'sunny_expenses_state',
     default: generateExpensesData(),
     effects_UNSTABLE: [persistAtom],
 });
 
-// ryan expenses
-export const ryanExpensesState = atom<ExpenseItemType[]>({
+export const ryanExpensesState = atom<ExpenseItem[]>({
     key: 'ryan_expenses_state',
     default: generateExpensesData(),
     effects_UNSTABLE: [persistAtom],

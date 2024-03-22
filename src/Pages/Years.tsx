@@ -2,8 +2,6 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { styled } from 'styled-components';
 // import components
 import { PageTitle, PageWrapper } from './Home';
-import { useRecoilValue } from 'recoil';
-import { yearState } from '../data';
 
 const YearWrapper = styled.div`
     display: grid;
@@ -33,7 +31,31 @@ const MonthCard = styled.div`
 export default function Years() {
     const navigate = useNavigate();
     const { year } = useParams();
-    const yearArr = useRecoilValue(yearState);
+
+    class MonthlyData {
+        id: number;
+        month: string;
+
+        constructor(id: number, month: string) {
+            this.id = id;
+            this.month = month;
+        }
+    }
+
+    const yearArr = [
+        new MonthlyData(0, 'Jan'),
+        new MonthlyData(1, 'Feb'),
+        new MonthlyData(2, 'Mar'),
+        new MonthlyData(3, 'Apr'),
+        new MonthlyData(4, 'May'),
+        new MonthlyData(5, 'Jun'),
+        new MonthlyData(6, 'Jul'),
+        new MonthlyData(7, 'Aug'),
+        new MonthlyData(8, 'Sep'),
+        new MonthlyData(9, 'Oct'),
+        new MonthlyData(10, 'Nov'),
+        new MonthlyData(11, 'Dec'),
+    ];
 
     return (
         <PageWrapper>
