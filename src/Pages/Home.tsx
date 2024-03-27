@@ -7,6 +7,9 @@ export const PageWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        height: 100vh;
+    }
 `;
 
 export const PageTitle = styled.h3`
@@ -20,6 +23,9 @@ export const PageTitle = styled.h3`
     color: var(--accent-100);
     background-color: var(--accent-300);
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        margin: 3.5rem auto;
+    }
 `;
 
 const HomeWrapper = styled.div`
@@ -35,7 +41,6 @@ const HomeWrapper = styled.div`
         align-items: center;
         flex-basis: 50%;
         width: 100%;
-        height: 100%;
         color: var(--accent-100);
         background-color: var(--accent-300);
         margin: 1rem;
@@ -43,9 +48,10 @@ const HomeWrapper = styled.div`
         text-decoration: none;
         font-size: 2rem;
         transition: 300ms opacity;
-        &:hover {
-            opacity: 0.5;
-        }
+    }
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        flex-direction: column;
+        height: 65%;
     }
 `;
 

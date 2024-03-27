@@ -28,16 +28,11 @@ const ExpensesWrapper = styled.div`
             }
         }
     }
-`;
-const Results = styled.div`
-    flex-basis: 50%;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    padding: 2rem;
-    border-radius: 10px;
-    background-color: aliceblue;
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        width: 75%;
+        margin: 1rem 0;
+        font-size: 1.25rem;
+    }
 `;
 
 const InputItems = styled.div`
@@ -58,6 +53,17 @@ const InputItems = styled.div`
             outline: 2px solid var(--accent-200);
         }
     }
+`;
+
+const Results = styled.div`
+    flex-basis: 50%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 2rem;
+    border-radius: 10px;
+    background-color: aliceblue;
 `;
 
 const ResultItems = styled.p`
@@ -145,39 +151,39 @@ export default function Expenses(props: ExpensesProps) {
                 <InputItems>
                     <label>월급 : </label>
                     <input
-                        type="text"
+                        type="number"
                         {...register(registerValues.salaryVal)}
                     ></input>
                 </InputItems>
                 <InputItems>
                     <label>카드값 : </label>
                     <input
-                        type="text"
+                        type="number"
                         {...register(registerValues.creditVal)}
                     ></input>
                 </InputItems>
                 <InputItems>
                     <label>집관련 : </label>
                     <input
-                        type="text"
+                        type="number"
                         {...register(registerValues.houseVal)}
                     ></input>
                 </InputItems>
                 <InputItems>
                     <label>땡겨쓴 돈 : </label>
                     <input
-                        type="text"
+                        type="number"
                         {...register(registerValues.debtVal)}
                     ></input>
                 </InputItems>
                 <InputItems>
                     <label>저축 : </label>
                     <input
-                        type="text"
+                        type="number"
                         {...register(registerValues.savingVal)}
                     ></input>
                 </InputItems>
-                <button>제출하기</button>
+                <button>계산하기</button>
             </form>
             <Results>
                 <ResultItems>

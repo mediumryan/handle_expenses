@@ -12,7 +12,7 @@ import { FaBars } from 'react-icons/fa';
 const MainWrapper = styled.main`
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     & > h3 {
         cursor: pointer;
         width: 50%;
@@ -30,6 +30,9 @@ const MainWrapper = styled.main`
         transition: 300ms box-shadow;
         &:hover {
             box-shadow: rgba(0, 0, 0, 0.5) 1.95px 1.95px 2.6px;
+        }
+        @media only screen and (min-width: 768px) and (max-width: 1024px) {
+            margin-top: 3.5rem;
         }
     }
 `;

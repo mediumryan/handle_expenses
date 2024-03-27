@@ -1,4 +1,3 @@
-import React from 'react';
 import { useParams } from 'react-router-dom';
 import { styled } from 'styled-components';
 // import components
@@ -11,6 +10,9 @@ const MonthWrapper = styled.div`
     align-items: center;
     margin-top: 2.5rem;
     padding: 0.25rem 5rem;
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        flex-direction: column;
+    }
 `;
 
 export default function Month() {

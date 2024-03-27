@@ -7,8 +7,11 @@ const YearWrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    grid-column-gap: 4px;
-    grid-row-gap: 4px;
+    grid-column-gap: 0.5rem;
+    grid-row-gap: 0.5rem;
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
 `;
 
 const MonthCard = styled.div`
@@ -22,9 +25,15 @@ const MonthCard = styled.div`
     box-shadow: var(--accent-200) 1.95px 1.95px 2.6px;
     margin: 0.25rem 1rem;
     font-size: 1.25rem;
+    font-weight: bold;
     transition: 700ms transform;
     &:hover {
         transform: translateY(-5px);
+    }
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        width: 250px;
+        height: 225px;
+        font-size: 1.5rem;
     }
 `;
 
