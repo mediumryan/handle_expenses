@@ -12,6 +12,9 @@ const YearWrapper = styled.div`
     @media only screen and (min-width: 768px) and (max-width: 1024px) {
         grid-template-columns: repeat(3, 1fr);
     }
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
 `;
 
 const MonthCard = styled.div`
@@ -34,6 +37,11 @@ const MonthCard = styled.div`
         width: 250px;
         height: 225px;
         font-size: 1.5rem;
+    }
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        width: 150px;
+        height: 100px;
+        font-size: 1.05rem;
     }
 `;
 

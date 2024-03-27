@@ -34,6 +34,10 @@ const MainWrapper = styled.main`
         @media only screen and (min-width: 768px) and (max-width: 1024px) {
             margin-top: 3.5rem;
         }
+        @media only screen and (min-width: 320px) and (max-width: 768px) {
+            width: 90%;
+            font-size: 1.25rem;
+        }
     }
 `;
 
@@ -48,7 +52,7 @@ function App() {
 
     return (
         <MainWrapper>
-            <HeaderToggle />
+            {/* <HeaderToggle /> */}
             <h3
                 onClick={() => {
                     navigate('/');

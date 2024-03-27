@@ -10,8 +10,9 @@ const MonthWrapper = styled.div`
     align-items: center;
     margin-top: 2.5rem;
     padding: 0.25rem 5rem;
-    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    @media only screen and (min-width: 320px) and (max-width: 1024px) {
         flex-direction: column;
+        padding: 0.25rem 0.5rem;
     }
 `;
 

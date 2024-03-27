@@ -26,6 +26,9 @@ export const PageTitle = styled.h3`
     @media only screen and (min-width: 768px) and (max-width: 1024px) {
         margin: 3.5rem auto;
     }
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        font-size: 1.25rem;
+    }
 `;
 
 const HomeWrapper = styled.div`
@@ -52,6 +55,10 @@ const HomeWrapper = styled.div`
     @media only screen and (min-width: 768px) and (max-width: 1024px) {
         flex-direction: column;
         height: 65%;
+    }
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        flex-direction: column;
+        height: 70%;
     }
 `;
 

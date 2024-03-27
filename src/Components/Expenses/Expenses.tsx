@@ -26,12 +26,24 @@ const ExpensesWrapper = styled.div`
             &:hover {
                 background-color: var(--accent-100);
             }
+            @media only screen and (min-width: 320px) and (max-width: 768px) {
+                align-self: center;
+            }
+        }
+        @media only screen and (min-width: 320px) and (max-width: 768px) {
+            width: 90%;
+            align-items: flex-start;
         }
     }
     @media only screen and (min-width: 768px) and (max-width: 1024px) {
         width: 75%;
         margin: 1rem 0;
         font-size: 1.25rem;
+    }
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        width: 90%;
+        flex-direction: column;
+        align-items: flex-start;
     }
 `;
 
@@ -52,6 +64,9 @@ const InputItems = styled.div`
             border-color: transparent;
             outline: 2px solid var(--accent-200);
         }
+        @media only screen and (min-width: 320px) and (max-width: 768px) {
+            width: 200px;
+        }
     }
 `;
 
@@ -64,15 +79,24 @@ const Results = styled.div`
     padding: 2rem;
     border-radius: 10px;
     background-color: aliceblue;
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        width: 100%;
+        margin: 2rem 0;
+    }
 `;
 
 const ResultItems = styled.p`
     display: flex;
     justify-content: space-between;
+    border-bottom: 0.5px solid var(--accent-100);
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
     p:first-child {
         min-width: 80px;
-        text-align: right;
         margin-right: 0.5rem;
+        @media only screen and (min-width: 320px) and (max-width: 768px) {
+            margin: 0.5rem 0;
+        }
     }
 `;
 
@@ -147,7 +171,9 @@ export default function Expenses(props: ExpensesProps) {
                 className="contents_form"
                 onSubmit={handleSubmit(handleExpenses)}
             >
-                <h4>{userName.charAt(0).toUpperCase() + userName.slice(1)}</h4>
+                <h4 style={{ color: '#3493ca', fontWeight: 'bold' }}>
+                    {userName.charAt(0).toUpperCase() + userName.slice(1)}
+                </h4>
                 <InputItems>
                     <label>월급 : </label>
                     <input
